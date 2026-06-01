@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: store-rating-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: store_rating_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - store-rating-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  store-rating-postgres-data:
